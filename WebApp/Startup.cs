@@ -23,7 +23,7 @@ namespace WebApp
             Configuration.Bind("Project", new Config());
 
             services.AddTransient<ITextFieldsRepositories, EFTextFieldsRepositories>();
-            services.AddTransient<IServiceItemsRepositories, EFServiceItemsRepositories>();
+            services.AddTransient<IArticlesRepositories, EFArticlesRepositories>();
             services.AddTransient<DataManager>();
 
             services.AddDbContext<AppDbContext>(c => c.UseSqlServer(Config.ConnectionString));

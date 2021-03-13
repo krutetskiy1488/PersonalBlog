@@ -11,7 +11,7 @@ namespace WebApp.Domain
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<TextField> TextFields { get; set; }
-        public DbSet<ServiceItem> ServiceItems { get; set; }
+        public DbSet<Article> Articles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

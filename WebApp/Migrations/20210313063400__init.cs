@@ -3,10 +3,29 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebApp.Migrations
 {
-    public partial class _initial : Migration
+    public partial class _init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Articles",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    TitleImagePath = table.Column<string>(nullable: true),
+                    MetaTitle = table.Column<string>(nullable: true),
+                    MetaDescription = table.Column<string>(nullable: true),
+                    MetaKeywords = table.Column<string>(nullable: true),
+                    DateAdded = table.Column<DateTime>(nullable: false),
+                    Title = table.Column<string>(nullable: false),
+                    Subtitle = table.Column<string>(nullable: true),
+                    Text = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Articles", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -44,25 +63,6 @@ namespace WebApp.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ServiceItems",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(nullable: false),
-                    TitleImagePath = table.Column<string>(nullable: true),
-                    MetaTitle = table.Column<string>(nullable: true),
-                    MetaDescription = table.Column<string>(nullable: true),
-                    MetaKeywords = table.Column<string>(nullable: true),
-                    DateAdded = table.Column<DateTime>(nullable: false),
-                    Title = table.Column<string>(nullable: false),
-                    Subtitle = table.Column<string>(nullable: true),
-                    Text = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ServiceItems", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -194,21 +194,21 @@ namespace WebApp.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "3fdef149-fd52-48e1-b5ce-a099a7cac941", "af49938a-188b-4a12-9a7a-17cb618dfa66", "admin", "ADMIN" });
+                values: new object[] { "3fdef149-fd52-48e1-b5ce-a099a7cac941", "7f64f7ff-9481-42f2-8e35-7a21ca977119", "admin", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "8559a0b0-a171-4724-8431-982e2c8a5ed4", 0, "f060194e-054e-4574-8ba0-6f67b9afe352", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAEEloZZ2szSAg/PJQ/dMJdIXC9TpszFrL47MHFP28NFq3choumX1DxtIAdH9aK0cplQ==", null, false, "", false, "admin" });
+                values: new object[] { "8559a0b0-a171-4724-8431-982e2c8a5ed4", 0, "0fbc0830-10e7-4ea7-b3e2-ea3cab6b50b3", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAEAACcQAAAAEIcRLiaPrOUvGq3V7Eor8QkDd1Yx4Cya+To6xq7YnuYyKS6FABqUMY8smLjAAqmqcg==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "TextFields",
                 columns: new[] { "Id", "CodeWord", "DateAdded", "MetaDescription", "MetaKeywords", "MetaTitle", "Subtitle", "Text", "Title", "TitleImagePath" },
                 values: new object[,]
                 {
-                    { new Guid("ed87c8f8-82bb-471b-aa44-80bd6ffb9a9a"), "PageIndex", new DateTime(2021, 3, 12, 20, 1, 19, 125, DateTimeKind.Utc).AddTicks(2178), null, null, null, null, "Содержание заполняется админом", "Главная", null },
-                    { new Guid("368eb6c7-cd57-407d-ab0e-3ce51d616fc2"), "PageServices", new DateTime(2021, 3, 12, 20, 1, 19, 125, DateTimeKind.Utc).AddTicks(6027), null, null, null, null, "Содержание заполняется админом", "Наши услуги", null },
-                    { new Guid("30afafcc-42e4-4e1e-9247-57b886c5f715"), "PageContacts", new DateTime(2021, 3, 12, 20, 1, 19, 125, DateTimeKind.Utc).AddTicks(6158), null, null, null, null, "Содержание заполняется админом", "Контакты", null }
+                    { new Guid("ed87c8f8-82bb-471b-aa44-80bd6ffb9a9a"), "PageIndex", new DateTime(2021, 3, 13, 6, 33, 59, 832, DateTimeKind.Utc).AddTicks(2456), null, null, null, null, "Содержание заполняется админом", "Главная", null },
+                    { new Guid("368eb6c7-cd57-407d-ab0e-3ce51d616fc2"), "PageServices", new DateTime(2021, 3, 13, 6, 33, 59, 833, DateTimeKind.Utc).AddTicks(6217), null, null, null, null, "Содержание заполняется админом", "Наши услуги", null },
+                    { new Guid("30afafcc-42e4-4e1e-9247-57b886c5f715"), "PageContacts", new DateTime(2021, 3, 13, 6, 33, 59, 833, DateTimeKind.Utc).AddTicks(6337), null, null, null, null, "Содержание заполняется админом", "Контакты", null }
                 });
 
             migrationBuilder.InsertData(
@@ -259,6 +259,9 @@ namespace WebApp.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Articles");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -272,9 +275,6 @@ namespace WebApp.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
-
-            migrationBuilder.DropTable(
-                name: "ServiceItems");
 
             migrationBuilder.DropTable(
                 name: "TextFields");

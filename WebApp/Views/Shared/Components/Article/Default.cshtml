@@ -1,4 +1,4 @@
-﻿@model IQueryable<ServiceItem>
+﻿@model IQueryable<Article>
 
 <div class="row">
     @if (Model.Any())
@@ -6,7 +6,7 @@
         @foreach (var entity in Model)
         {
             <article class="col-6 col-12-xsmall work-item">
-                <a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" class="image fit thumb">
+                <a asp-area="" asp-controller="Articles" asp-action="Index" asp-route-id="@entity.Id" class="image fit thumb">
                     <img src="~/images/@entity.TitleImagePath" alt="" />
                 </a>
                 <h3>@entity.Title</h3>

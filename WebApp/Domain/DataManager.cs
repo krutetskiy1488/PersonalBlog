@@ -5,12 +5,12 @@ namespace WebApp.Domain
     public class DataManager
     {
         public ITextFieldsRepositories TextFields { get; set; }
-        public IServiceItemsRepositories ServiceItems { get; set; }
+        public IArticlesRepositories Articles { get; set; }
 
-        public DataManager(ITextFieldsRepositories textFields, IServiceItemsRepositories serviceItems)
+        public DataManager(ITextFieldsRepositories textFields, IArticlesRepositories articles)
         {
             TextFields = textFields;
-            ServiceItems = serviceItems;
+            Articles = articles;
         }
     }
 }

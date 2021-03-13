@@ -8,11 +8,11 @@ using WebApp.Domain;
 
 namespace WebApp.Controllers
 {
-    public class ServicesController : Controller
+    public class ArticlesController : Controller
     {
         private readonly DataManager dataManager;
 
-        public ServicesController(DataManager dataManager)
+        public ArticlesController(DataManager dataManager)
         {
             this.dataManager = dataManager;
         }
@@ -21,11 +21,11 @@ namespace WebApp.Controllers
         {
             if (id != default)
             {
-                return View("Show", dataManager.ServiceItems.GetServiceItemById(id));
+                return View("Show", dataManager.Articles.GetArticlesById(id));
             }
 
             ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageServices");
-            return View(dataManager.ServiceItems.GetServiceItems());
+            return View(dataManager.Articles.GetArticles());
         }
     }
 }

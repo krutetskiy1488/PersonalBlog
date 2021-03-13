@@ -49,7 +49,7 @@ namespace WebApp.Migrations
                         new
                         {
                             Id = "3fdef149-fd52-48e1-b5ce-a099a7cac941",
-                            ConcurrencyStamp = "af49938a-188b-4a12-9a7a-17cb618dfa66",
+                            ConcurrencyStamp = "7f64f7ff-9481-42f2-8e35-7a21ca977119",
                             Name = "admin",
                             NormalizedName = "ADMIN"
                         });
@@ -148,13 +148,13 @@ namespace WebApp.Migrations
                         {
                             Id = "8559a0b0-a171-4724-8431-982e2c8a5ed4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f060194e-054e-4574-8ba0-6f67b9afe352",
+                            ConcurrencyStamp = "0fbc0830-10e7-4ea7-b3e2-ea3cab6b50b3",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEloZZ2szSAg/PJQ/dMJdIXC9TpszFrL47MHFP28NFq3choumX1DxtIAdH9aK0cplQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIcRLiaPrOUvGq3V7Eor8QkDd1Yx4Cya+To6xq7YnuYyKS6FABqUMY8smLjAAqmqcg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -249,7 +249,7 @@ namespace WebApp.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("WebApp.Domain.Entities.ServiceItem", b =>
+            modelBuilder.Entity("WebApp.Domain.Entities.Article", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -282,7 +282,7 @@ namespace WebApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ServiceItems");
+                    b.ToTable("Articles");
                 });
 
             modelBuilder.Entity("WebApp.Domain.Entities.TextField", b =>
@@ -328,7 +328,7 @@ namespace WebApp.Migrations
                         {
                             Id = new Guid("ed87c8f8-82bb-471b-aa44-80bd6ffb9a9a"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2021, 3, 12, 20, 1, 19, 125, DateTimeKind.Utc).AddTicks(2178),
+                            DateAdded = new DateTime(2021, 3, 13, 6, 33, 59, 832, DateTimeKind.Utc).AddTicks(2456),
                             Text = "Содержание заполняется админом",
                             Title = "Главная"
                         },
@@ -336,7 +336,7 @@ namespace WebApp.Migrations
                         {
                             Id = new Guid("368eb6c7-cd57-407d-ab0e-3ce51d616fc2"),
                             CodeWord = "PageServices",
-                            DateAdded = new DateTime(2021, 3, 12, 20, 1, 19, 125, DateTimeKind.Utc).AddTicks(6027),
+                            DateAdded = new DateTime(2021, 3, 13, 6, 33, 59, 833, DateTimeKind.Utc).AddTicks(6217),
                             Text = "Содержание заполняется админом",
                             Title = "Наши услуги"
                         },
@@ -344,7 +344,7 @@ namespace WebApp.Migrations
                         {
                             Id = new Guid("30afafcc-42e4-4e1e-9247-57b886c5f715"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2021, 3, 12, 20, 1, 19, 125, DateTimeKind.Utc).AddTicks(6158),
+                            DateAdded = new DateTime(2021, 3, 13, 6, 33, 59, 833, DateTimeKind.Utc).AddTicks(6337),
                             Text = "Содержание заполняется админом",
                             Title = "Контакты"
                         });

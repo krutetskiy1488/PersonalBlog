@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebApp.Domain.Entities
 {
-    public class ServiceItem : EntityBase
+    public class Article : EntityBase
     {
         [Required(ErrorMessage = "Заполните название услуги")]
         [Display(Name = "Название страницы (заголовок)")]

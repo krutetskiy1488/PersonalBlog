@@ -10,11 +10,11 @@ using WebApp.Service;
 namespace WebApp.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class ServiceItemsController : Controller
+    public class ArticlesController : Controller
     {
         private readonly DataManager dataManager;
         private readonly IWebHostEnvironment hostingEnvironment;
-        public ServiceItemsController(DataManager dataManager, IWebHostEnvironment hostingEnvironment)
+        public ArticlesController(DataManager dataManager, IWebHostEnvironment hostingEnvironment)
         {
             this.dataManager = dataManager;
             this.hostingEnvironment = hostingEnvironment;
@@ -22,11 +22,12 @@ namespace WebApp.Areas.Admin.Controllers
 
         public IActionResult Edit(Guid id)
         {
-            var entity = id == default ? new ServiceItem() : dataManager.ServiceItems.GetServiceItemById(id);
+            var entity = id == default ? new Article() : dataManager.Articles.GetArticlesById(id);
             return View(entity);
         }
+
         [HttpPost]
-        public IActionResult Edit(ServiceItem model, IFormFile titleImageFile)
+        public IActionResult Edit(Article model, IFormFile titleImageFile)
         {
             if (ModelState.IsValid)
             {
@@ -38,7 +39,7 @@ namespace WebApp.Areas.Admin.Controllers
                         titleImageFile.CopyTo(stream);
                     }
                 }
-                dataManager.ServiceItems.SaveServiceItem(model);
+                dataManager.Articles.SaveArticles(model);
                 return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
             }
             return View(model);
@@ -47,7 +48,7 @@ namespace WebApp.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Delete(Guid id)
         {
-            dataManager.ServiceItems.DeleteServiceItem(id);
+            dataManager.Articles.DeleteArticles(id);
             return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
         }
     }

@@ -6,34 +6,34 @@ using WebApp.Domain.Repositories.Abstract;
 
 namespace WebApp.Domain.Repositories.EntityFramework
 {
-    public class EFServiceItemsRepositories : IServiceItemsRepositories
+    public class EFArticlesRepositories : IArticlesRepositories
     {
         private readonly AppDbContext context;
 
-        public EFServiceItemsRepositories(AppDbContext context)
+        public EFArticlesRepositories(AppDbContext context)
         {
             this.context = context;
         }
 
-        public IQueryable<ServiceItem> GetServiceItems()
+        public IQueryable<Article> GetArticles()
         {
-            return context.ServiceItems;
+            return context.Articles;
         }
 
-        public ServiceItem GetServiceItemById(Guid id)
+        public Article GetArticlesById(Guid id)
         {
-            return context.ServiceItems.FirstOrDefault(c => c.Id == id);
+            return context.Articles.FirstOrDefault(c => c.Id == id);
         }
 
-        public void SaveServiceItem(ServiceItem entity)
+        public void SaveArticles(Article entity)
         {
             context.Entry(entity).State = entity.Id == default ? EntityState.Added : EntityState.Modified;
             context.SaveChanges();
         }
 
-        public void DeleteServiceItem(Guid id)
+        public void DeleteArticles(Guid id)
         {
-            context.ServiceItems.Remove(new ServiceItem() { Id = id });
+            context.Articles.Remove(new Article() { Id = id });
             context.SaveChanges();
         }
     }
