@@ -1,0 +1,24 @@
+﻿@model IQueryable<ServiceItem>
+@{
+    TextField textField = ViewBag.TextField;
+
+    ViewBag.Title = textField.MetaTitle;
+    ViewBag.Description = textField.MetaDescription;
+    ViewBag.Keywords = textField.MetaKeywords;
+}
+
+<div class="row">
+    @if (Model.Any())
+    {
+        @foreach (ServiceItem entity in Model)
+        {
+            <article class="col-6 col-12-xsmall work-item">
+                <a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@entity.Id" class="image fit thumb">
+                    <img src="~/images/@entity.TitleImagePath" alt="" />
+                </a>
+                <h3>@entity.Title</h3>
+                <p>@entity.Subtitle</p>
+            </article>
+        }
+    }
+</div>
