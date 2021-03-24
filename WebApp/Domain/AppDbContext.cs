@@ -12,6 +12,7 @@ namespace WebApp.Domain
 
         public DbSet<TextField> TextFields { get; set; }
         public DbSet<Article> Articles { get; set; }
+        public DbSet<Description> Description { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -40,6 +41,12 @@ namespace WebApp.Domain
             {
                 RoleId = "3fdef149-fd52-48e1-b5ce-a099a7cac941",
                 UserId = "8559a0b0-a171-4724-8431-982e2c8a5ed4"
+            });
+
+            builder.Entity<Description>().HasData(new Description
+            {
+                Id = new Guid("58e519d6-5f87-48aa-b4f2-743db9772fc5"),
+                Text = "Я Семен"
             });
 
             builder.Entity<TextField>().HasData(new TextField

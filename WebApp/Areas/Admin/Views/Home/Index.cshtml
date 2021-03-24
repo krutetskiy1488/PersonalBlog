@@ -7,9 +7,9 @@
 <div>
     <h2>@strTitle</h2>
     <div>
-        <h3>Наши услуги</h3>
+        <h3>Статьи</h3>
         <div class="div-box">
-            <a asp-area="Admin" asp-controller="Articles" asp-action="Edit" asp-route-id="">Добавить услугу</a>
+            <a asp-area="Admin" asp-controller="Articles" asp-action="Edit" asp-route-id="">Добавить статью</a>
         </div>
         @if (Model.Any())
         {
@@ -17,7 +17,7 @@
                 @foreach (Article entity in Model)
                 {
                     <div>
-                        <a asp-area="Admin" asp-controller="Articles" asp-action="Edit" asp-route-id="@entity.Id">редактировать</a>
+                        <a asp-area="Admin" asp-controller="Articles" asp-action="Edit" asp-route-id="@entity.Id">Редактировать</a>
                         |
                         <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Articles" asp-action="Delete" method="post">
                             <input type="hidden" name="id" value="@entity.Id">
@@ -33,9 +33,13 @@
         }
     </div>
     <div class="div-box">
+        <h3>Редактировать описание профиля</h3>
+        <a asp-area="Admin" asp-controller="Description" asp-action="Edit" asp-route-id="">Профиль</a>
+    </div>
+    <div class="div-box">
         <h3>Редактировать страницы сайта</h3>
         <a asp-area="Admin" asp-controller="TextFields" asp-action="Edit" asp-route-codeWord="PageIndex">Главная</a>
-        <a asp-area="Admin" asp-controller="TextFields" asp-action="Edit" asp-route-codeWord="PageServices">Наши услуги</a>
+        <a asp-area="Admin" asp-controller="TextFields" asp-action="Edit" asp-route-codeWord="PageServices">Статьи</a>
         <a asp-area="Admin" asp-controller="TextFields" asp-action="Edit" asp-route-codeWord="PageContacts">Контакты</a>
     </div>
     <div class="div-box">

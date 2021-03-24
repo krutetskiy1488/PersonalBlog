@@ -24,6 +24,7 @@ namespace WebApp
 
             services.AddTransient<ITextFieldsRepositories, EFTextFieldsRepositories>();
             services.AddTransient<IArticlesRepositories, EFArticlesRepositories>();
+            services.AddTransient<IDescriptionRepositories, EFDescriptionRepositories>();
             services.AddTransient<DataManager>();
 
             services.AddDbContext<AppDbContext>(c => c.UseSqlServer(Config.ConnectionString));

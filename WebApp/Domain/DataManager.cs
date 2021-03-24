@@ -6,11 +6,13 @@ namespace WebApp.Domain
     {
         public ITextFieldsRepositories TextFields { get; set; }
         public IArticlesRepositories Articles { get; set; }
+        public IDescriptionRepositories Description { get; set; }
 
-        public DataManager(ITextFieldsRepositories textFields, IArticlesRepositories articles)
+        public DataManager(ITextFieldsRepositories textFields, IArticlesRepositories articles, IDescriptionRepositories description)
         {
             TextFields = textFields;
             Articles = articles;
+            Description = description;
         }
     }
 }

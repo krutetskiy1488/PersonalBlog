@@ -25,7 +25,6 @@ namespace WebApp.Areas.Admin.Controllers
             var entity = id == default ? new Article() : dataManager.Articles.GetArticlesById(id);
             return View(entity);
         }
-
         [HttpPost]
         public IActionResult Edit(Article model, IFormFile titleImageFile)
         {
