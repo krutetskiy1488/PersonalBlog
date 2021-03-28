@@ -55,20 +55,6 @@ namespace WebApp.Domain
                 CodeWord = "PageIndex",
                 Title = "Главная"
             });
-
-            builder.Entity<TextField>().HasData(new TextField
-            {
-                Id = new Guid("368eb6c7-cd57-407d-ab0e-3ce51d616fc2"),
-                CodeWord = "PageServices",
-                Title = "Наши услуги"
-            });
-
-            builder.Entity<TextField>().HasData(new TextField
-            {
-                Id = new Guid("30afafcc-42e4-4e1e-9247-57b886c5f715"),
-                CodeWord = "PageContacts",
-                Title = "Контакты"
-            });
         }
     }
 }
